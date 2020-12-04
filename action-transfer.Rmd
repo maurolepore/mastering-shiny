@@ -393,11 +393,11 @@ server <- function(input, output, session) {
     if (input$snake) {
       names(out) <- janitor::make_clean_names(names(out))
     }
-    if (input$empty) {
-      out <- janitor::remove_empty(out, "cols")
-    }
     if (input$constant) {
       out <- janitor::remove_constant(out)
+    }
+    if (input$empty) {
+      out <- janitor::remove_empty(out, "cols")
     }
     
     out
